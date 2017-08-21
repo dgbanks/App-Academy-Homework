@@ -1,0 +1,196 @@
+Started GET "/" for 127.0.0.1 at 2017-07-13 10:00:39 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/louiscruz/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/louiscruz/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (8.3ms)
+Completed 200 OK in 708ms (Views: 25.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:00:47 -0700
+Processing by BooksController#index as HTML
+Completed 500 Internal Server Error in 3ms
+
+
+  
+NameError (uninitialized constant BooksController::Book):
+  
+app/controllers/books_controller.rb:3:in `index'
+  [1m[35m (61.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5288427128707212630);[0m
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20170713170142)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5288427128707212630);[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20170713170142)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170713170142"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-13 17:04:33.834685"], ["updated_at", "2017-07-13 17:04:33.834685"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:05:04 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template books/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/louiscruz/Desktop/app-academy-repos/curriculum/rails/homeworks/library/solution/app/views"
+):
+  
+app/controllers/books_controller.rb:7:in `index'
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:05:33 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (3.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 903ms (Views: 887.4ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-07-13 10:05:38 -0700
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:05:57 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 364ms (Views: 340.8ms | ActiveRecord: 4.0ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Harry Potter and the Order of the Phoenix"], ["author", "J.K. Rowling"], ["created_at", "2017-07-13 17:06:17.207858"], ["updated_at", "2017-07-13 17:06:17.207858"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lost Names"], ["author", "Richard E. Kim"], ["created_at", "2017-07-13 17:06:17.214110"], ["updated_at", "2017-07-13 17:06:17.214110"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Extremely Loud and Incredibly Close"], ["author", "Jonathan Safran Foer"], ["created_at", "2017-07-13 17:06:17.218872"], ["updated_at", "2017-07-13 17:06:17.218872"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Man Alive"], ["author", "Thomas Page McBee"], ["created_at", "2017-07-13 17:06:17.223380"], ["updated_at", "2017-07-13 17:06:17.223380"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Argonauts"], ["author", "Maggie Nelson"], ["created_at", "2017-07-13 17:06:17.228339"], ["updated_at", "2017-07-13 17:06:17.228339"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A Little Life"], ["author", "Hanya Yanagihara"], ["created_at", "2017-07-13 17:06:17.233093"], ["updated_at", "2017-07-13 17:06:17.233093"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Sovereignty of Quiet"], ["author", "Kevin Everod Quashie"], ["created_at", "2017-07-13 17:06:17.238373"], ["updated_at", "2017-07-13 17:06:17.238373"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Redefining Realness"], ["author", "Janet Mock"], ["created_at", "2017-07-13 17:06:17.243690"], ["updated_at", "2017-07-13 17:06:17.243690"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:06:34 -0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 290ms (Views: 267.7ms | ActiveRecord: 7.9ms)
+
+
+Started DELETE "/books/1" for 127.0.0.1 at 2017-07-13 10:06:42 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BucOrDSQQzrYnFs2vg2QfkljN4q5ySll8BM6/zjZSJeBHmq0n2Vple4x8aVxJSPyepEMhaxtp4vIow5tDNrEVA==", "id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 1]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 12ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-07-13 10:06:42 -0700
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "books" CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170713170142)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-20 19:15:26.602117"], ["updated_at", "2017-08-20 19:15:26.602117"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "books" CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170713170142)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-20 19:15:26.662150"], ["updated_at", "2017-08-20 19:15:26.662150"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Harry Potter and the Order of the Phoenix"], ["author", "J.K. Rowling"], ["created_at", "2017-08-20 19:15:26.696921"], ["updated_at", "2017-08-20 19:15:26.696921"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lost Names"], ["author", "Richard E. Kim"], ["created_at", "2017-08-20 19:15:26.700564"], ["updated_at", "2017-08-20 19:15:26.700564"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Extremely Loud and Incredibly Close"], ["author", "Jonathan Safran Foer"], ["created_at", "2017-08-20 19:15:26.703580"], ["updated_at", "2017-08-20 19:15:26.703580"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Man Alive"], ["author", "Thomas Page McBee"], ["created_at", "2017-08-20 19:15:26.707300"], ["updated_at", "2017-08-20 19:15:26.707300"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Argonauts"], ["author", "Maggie Nelson"], ["created_at", "2017-08-20 19:15:26.710891"], ["updated_at", "2017-08-20 19:15:26.710891"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "A Little Life"], ["author", "Hanya Yanagihara"], ["created_at", "2017-08-20 19:15:26.714497"], ["updated_at", "2017-08-20 19:15:26.714497"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "The Sovereignty of Quiet"], ["author", "Kevin Everod Quashie"], ["created_at", "2017-08-20 19:15:26.717942"], ["updated_at", "2017-08-20 19:15:26.717942"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Redefining Realness"], ["author", "Janet Mock"], ["created_at", "2017-08-20 19:15:26.721634"], ["updated_at", "2017-08-20 19:15:26.721634"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/books" for 127.0.0.1 at 2017-08-20 22:59:28 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Books</h1>
+    2: 
+    3: <ul>
+    4:   <% @books.each do |book| %>
+    5:     <li><%= book.title %> by <%= book.author %></li>
+    6:     <%= button_to "delete", book_url(book), method: :delete %>
+    7:     <br>
+  
+app/views/books/index.html.erb:4:in `_app_views_books_index_html_erb__1166510121824849372_70144270689300'
